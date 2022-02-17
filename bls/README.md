@@ -63,6 +63,9 @@ In `bls_ths.py` you will implement:
 -- verify(...)
 ```
 
+Throughout this assignment we will use `bls12381` pairing friendly elliptic curve and `sha256` hash function. 
+You can read more (optional) about the `bls12381` curve here https://hackmd.io/@benjaminion/bls12-381
+
 ## References
 [1] Shamir, Adi. "How to share a secret." Communications of the ACM 22.11 (1979): 612-613.
 
