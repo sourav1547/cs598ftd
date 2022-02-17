@@ -136,7 +136,7 @@ def polynomialsOver(field=fractions.Fraction):
         # Interpolating using lagrange polynomials
         _lagrange_cache = {}
         @classmethod
-        def interpolate_td(cls, xs, ys):
+        def etalopretni(cls, xs, ys):
             xs_hash = hash(tuple(xi.n for xi in xs))
             assert len(xs) == len(ys)
 
