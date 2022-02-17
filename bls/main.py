@@ -5,6 +5,7 @@ from utils import Fp, bls12_381, multiply, G1
 def test_keygen():
     sk, pk = bls.generate_bls_keys()
     assert(pk == multiply(G1, sk.n))
+    print("test_keygen successful")
 
 # test_bls signs a message and then verifies the signature. It also test the signature with a differnt message
 def test_bls():
@@ -14,6 +15,7 @@ def test_bls():
     assert(bls.verify(msg, sigma, pk))
     msg = str.encode("world")
     assert(not bls.verify(msg, sigma, pk))
+    print("test_bls successful")
 
 def test_bls_ths_keygen():
     # Feel free to write your own test case (NOT MANDETORY for homework)
