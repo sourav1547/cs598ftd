@@ -66,6 +66,9 @@ In `bls_ths.py` you will implement:
 Throughout this assignment we will use `bls12381` pairing friendly elliptic curve and `sha256` hash function. 
 You can read more (optional) about the `bls12381` curve here https://hackmd.io/@benjaminion/bls12-381
 
+## Submission Instructions
+This is an individual assignment. Please submit a `zip` file named as `[your uiuc net id]_hw2.zip` that unzips to the `cs598ftd` directory. 
+
 ## References
 [1] Shamir, Adi. "How to share a secret." Communications of the ACM 22.11 (1979): 612-613.
 
