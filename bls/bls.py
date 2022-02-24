@@ -7,7 +7,7 @@ from utils import Fp, random_fp, bls12_381, G1, sha256, hash_to_G2
 # Fp = FiniteField(bls12_381.curve_order, 1)
 
 # Generating a pair of bls (non-threshold) key pair (sk, pk)
-def generate_bls_keys() -> tuple[Fp, bls12_381.G1]:
+def generate_bls_keys() -> 'tuple[Fp, bls12_381.G1]':
     sk = random_fp()
     pk = bls12_381.multiply(G1, sk.n) 
     return sk, pk
