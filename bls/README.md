@@ -1,7 +1,7 @@
 ## Introduction
 We have learned about the classic secret sharing scheme due to Shamir [1] . We also learned about the bilinear pairing-based threshold signature scheme due to Boldyreva [2], which is the threshold variant of the pairing-based signature scheme due to Boneh, Lynn, and Sacham [3]. Here on, we will refer to it as the BLS threshold signature scheme. 
 
-In this homework, you will implement the BLS threshold signature in a modular way using the `python` programming language. We recommend using `python` version 3.6 or higher. 
+In this homework, you will implement the BLS threshold signature in a modular way using the `python` programming language. We recommend using `python` version 3.8 or 3.9. 
 
 **NOTE**: In this homework, you will only implement only the cryptographic operations of the BLS threshold signature scheme. You are **not required** to do any network programming to finish this homework.
 
