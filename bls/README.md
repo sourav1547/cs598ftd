@@ -50,9 +50,6 @@ In `shamir.py` you will implement:
 ```
 -- gen_share(...)
 -- interpolate_at_0(...)
--- interpolate_at_j(...)
--- interpolate_at_g0(...)
--- interpolate_at_gj(...)
 ```
 
 In `bls_ths.py` you will implement:
@@ -61,6 +58,7 @@ In `bls_ths.py` you will implement:
 -- partial_sign(...)
 -- aggregate_signature(...)
 -- verify(...)
+-- interpolate_at_g0(...)
 ```
 
 Throughout this assignment we will use `bls12381` pairing friendly elliptic curve and `sha256` hash function. 
