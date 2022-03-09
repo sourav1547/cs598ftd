@@ -1,7 +1,7 @@
 from utils import Fp, random_fp, bls12_381, G1, sha256, hash_to_G2
 
 # TODO: To generate a secret key shares of each node and the threshold public keys of every node
-# INPUT:: n: total number of nodes; t: fault threshold
+# INPUT:: n: total number of nodes; t: fault threshold, i.e., adversary can corrupt up to (including) t nodes.
 # OUTPUT:: bls public key; [threshold secret keys]; [threshold public keys]
 # NOTE: Although this function is also returning a list of private keys, in practice the key generation
 # protocol will only return the i-th secret share to i-th node.  
