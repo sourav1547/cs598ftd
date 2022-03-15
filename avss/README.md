@@ -1,7 +1,7 @@
 # Asynchronous Reliable Broadcast and Asynchronous Verifiable Secret Sharing
 
 ## Introduction
-In this assignment, we will first implement the Asynchronous Reliable Broadcast (RBC) protocol due to Bracha [1, 2]. In particular, we will implement the verifiable variant of Bracha's RBC. We will then use the verifiable RBC to implement a Asynchronous Verifiable Secret Sharing (AVSS) protocol. 
+In this assignment, we will first implement the Asynchronous Reliable Broadcast (RBC) protocol due to Bracha [1, 2]. In particular, we will implement the verifiable variant of Bracha's RBC. We will then use the verifiable RBC to implement an Asynchronous Verifiable Secret Sharing (AVSS) protocol. 
 
 Throughout the assignment, we will use `n`, the total number of nodes (including the dealer), as `3t+1`. Here `t` is the maximum number of nodes an adversary can corrupt.
 
@@ -113,12 +113,17 @@ As the name suggests, the files `Dockerfile` and `docker-compose.yml` are docker
 
 The `main.py` is the entry point of the code. The `network/` library implements `router.py` which provides the basic communication interface between nodes. See `tests/test_beb.py` for an example on how to use the communication interface. 
 
-The `core/` directory consists of four files: `beb.py`, `rbc.py`, `avss.py` and `utils.py` is what you will be making changes to. The `beb.py` is an example code that implements the best effor broadcast protocol, i.e., the leader simply sends its proposal to all the node. You can use this as a reference to implement the `rbc.py` and `avss.py`. You can implement any helper functions in `utils.py`.
+The `core/` directory consists of four files: `beb.py`, `rbc.py`, `avss.py` and `utils.py` is what you will be making changes to. The `beb.py` is an example code that implements the best effort broadcast protocol, i.e., the leader sends its proposal to all the nodes. You can use this as a reference to implement the `rbc.py` and `avss.py`. You can implement any helper functions in `utils.py`.
 
 The `tests/` directory consists of files to test best effort broadcast (`test_beb.py`), reliable broadcast (`test_rbc.py`),  and AVSS scheme (`test_avss.py`).
 
+
 ## Assignment Requirements
-You will be making changes to `core/rbc.py` and `core/avss.py`.
+You will implement the validated Reliable Broadcast in `core/rbc.py` and AVSS protocol described above in `core/avss.py`. 
+
+Throughout this assignment, we will use the `prime192v1` elliptic curve for cryptographic operations. See `tests/test_avss.py` for a brief example. You can assume that the channels between any pair of nodes are authenticated and private.
+
+NOTE: Your code must handle malicious behavior such as equivocation, message omission, etc., by a subset of nodes (including the leader).
 
 ## Setup and Installation
 This skeleton uses `docker`. Thus you have to first install `docker` in your machine. You can get `docker` from https://docs.docker.com/get-docker/
@@ -150,6 +155,9 @@ Once you are inside the docker image, you can test the installation by running
 ``` 
 python main.py
 ```
+
+## Submission Instructions
+This is an individual assignment. Please submit a `zip` file named as `[your uiuc net id]_hw3.zip` that unzips to the `cs598ftd` directory. 
 
 ## Additional Resources
 ### `charm` resources
