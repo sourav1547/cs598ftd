@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  avss:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ./:/usr/src/avss/
+    command: pytest -v --cov=avss
