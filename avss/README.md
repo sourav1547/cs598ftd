@@ -39,7 +39,7 @@ Upon receiving 2t+1 <READY, M> for matching M:
 ```
 
 ## Asynchronous Verifiable Secret Sharing (AVSS)
-An AVSS protocol consists of two phases: Sharing and Reconstruction. A dealer `D` shares a secret `s` during the sharing phase using the `Share(s)` protocol. During the reconstruction phase, nodes use `Rec(.)` to recover the secret. We say that `(Share(), Rec())` is a `t`-resilient AVSS protocol if the following properties hold with high probability against an adversary controlling up to `t` nodes: 
+An AVSS protocol consists of two phases: Sharing and Reconstruction. A dealer `D` shares a secret `s` during the sharing phase using the `Share()` protocol. During the reconstruction phase, nodes use `Rec(.)` to recover the secret. We say that `(Share(), Rec())` is a `t`-resilient AVSS protocol if the following properties hold with high probability against an adversary controlling up to `t` nodes: 
 %
 
 - **Termination**: 
@@ -51,11 +51,7 @@ An AVSS protocol consists of two phases: Sharing and Reconstruction. A dealer `D
     - If `D` is honest, then each honest node, upon terminating `Rec()`, outputs the shared secret `s`. 
     - If some honest node terminates `Share()`, then there exists a fixed secret `s`, such that each honest node, upon completing `Rec()`, will output `s`.
 
-- **Secrecy**: If `D` is honest and no honest node has begun executing `Rec()`, then an adversary that corrupts up to `t` nodes has no information about `s`.
-
-In this homework, we will implement an AVSS scheme that provides the following weak secrecy property.
-
-- **Weak-Secrecy**: If `D` is honest and no honest node has begun executing `Rec()`, then an adversary that corrupts up to `t` nodes has no information about `s` other than whatever is revealed from `g^s`.
+- **Secrecy**: If `D` is honest and no honest node has begun executing `Rec()`, then an adversary that corrupts up to `t` nodes has no information about `s` other than whatever is revealed from `g^s`.
 
 ### Pseudocode of the Sharing phase i.e., `Share()`
 ```
