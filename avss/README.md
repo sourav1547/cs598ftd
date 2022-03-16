@@ -92,7 +92,6 @@ The code skeleton has the following code structure.
 ├── README.md
 ├── core
 │   ├── avss.py
-│   ├── beb.py
 │   ├── rbc.py
 │   └── utils.py
 ├── main.py
@@ -100,18 +99,17 @@ The code skeleton has the following code structure.
 │   └── router.py
 └── tests
     ├── test_avss.py
-    ├── test_beb.py
     └── test_rbc.py
 ```
 
 As the name suggests, the files `Dockerfile` and `docker-compose.yml` are docker related. Very briefly, the `Dockerfile` contains the environment specifications of the docker image and instructions to download and install them. You can think of  `docker-compose.yml` as the configuration file.
 
 
-The `main.py` is the entry point of the code. The `network/` library implements `router.py` which provides the basic communication interface between nodes. See `tests/test_beb.py` for an example on how to use the communication interface. 
+The `main.py` is the entry point of the code. The `network/` library implements `router.py` which provides the basic communication interface between nodes. See `tests/test_rbc.py` for an example on how to use the communication interface. 
 
-The `core/` directory consists of four files: `beb.py`, `rbc.py`, `avss.py` and `utils.py` is what you will be making changes to. The `beb.py` is an example code that implements the best effort broadcast protocol, i.e., the leader sends its proposal to all the nodes. You can use this as a reference to implement the `rbc.py` and `avss.py`. You can implement any helper functions in `utils.py`.
+The `core/` directory consists of three files: `rbc.py`, `avss.py` and `utils.py` is what you will be making changes to. Currently, the `rbc.py` implements a non fault tolerant broadcast protocol where the leader simply sends its proposal to all the nodes. You can use this as a reference to implement the fault tolerant `rbc.py` and `avss.py`. You can implement any helper functions in `utils.py`.
 
-The `tests/` directory consists of files to test best effort broadcast (`test_beb.py`), reliable broadcast (`test_rbc.py`),  and AVSS scheme (`test_avss.py`).
+The `tests/` directory consists of files to test the reliable broadcast (`test_rbc.py`) and AVSS scheme (`test_avss.py`).
 
 
 ## Assignment Requirements
