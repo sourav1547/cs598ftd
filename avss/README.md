@@ -61,7 +61,7 @@ An AVSS protocol consists of two phases: Sharing and Reconstruction. A dealer `D
    polynomial where ai's are random for i=1,2,...,t. 
 - Let v = [g^s, g^{a1}, g^{a2},..., g^{at}]
 - RBC(v)
-- Send <SHARE, p(i)> to node i
+- Send <SHARE, p(i)> to node i for i=1,2,...,n
 
 # During RBC(v), i-th node use the following predicate
 P(v):

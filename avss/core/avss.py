@@ -1,16 +1,16 @@
 from charm.toolbox.ecgroup import ZR
 
 
-def avss_share(sid, pid, N, t, leader, input, g, receive, send):
+def avss_share(sid, pid, N, t, g, leader, input, receive, send):
     """Asynchronous Verifiable Secret Sharing
 
     :param int pid: ``0 <= pid < N``
     :param int N:  at least 3
     :param int t: maximum number of malicious nodes , ``N >= 3t + 1``
+    :param group g: a generator of the elliptic curve group
     :param int leader: ``0 <= leader < N``
     :param input: if ``pid == leader``, then :func:`input()` is called
         to wait for the input value
-    :param group g: a generator of the elliptic curve group
     :param receive: :func:`receive()` blocks until a message is
         received; message is of the form::
 

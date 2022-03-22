@@ -10,7 +10,7 @@ from charm.toolbox.eccurve import prime192v1
 group = ECGroup(prime192v1)
 
 from network.router import simple_router
-from soln.avss import avss_share, avss_reconstruct
+from core.avss import avss_share, avss_reconstruct
 
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
