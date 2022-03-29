@@ -53,13 +53,13 @@ def test_avss_reconstruct(N=4, t=1, seed=None):
     inputs = [Queue() for _ in range(N)]
 
     for i in range(N):
-        t = Greenlet(avss_reconstruct, sid, i, N, t, g, inputs[i].get, recvs[i], sends[i])
-        t.start()
-        threads.append(t)
+        th = Greenlet(avss_reconstruct, sid, i, N, t, g, inputs[i].get, recvs[i], sends[i])
+        th.start()
+        threads.append(th)
     
     for i in range(N):
         inputs[i].put((commitments, shares[i]))
     gevent.joinall(threads)
 
-    for t in threads:
-        assert t.value == secret
+    for th in threads:
+        assert th.value == secret
