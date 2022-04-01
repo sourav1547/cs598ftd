@@ -153,6 +153,21 @@ python main.py
 ## Submission Instructions
 This is an individual assignment. Please submit a `zip` file named as `[your uiuc net id]_hw3.zip` that unzips to the `cs598ftd` directory. 
 
+For example, I will submit a zip file named `souravd2_hw3.zip` so that the following holds:
+```
+$ ls
+souravd2_hw3.zip
+$ unzip souravd2_hw3.zip
+$ ls
+souravd2_hw3.zip        cs598ftd
+$ cd cs598ftd
+$ ls
+README.md       avss            bls
+$ cd avss
+$ ls
+Dockerfile              __init__.py             docker-compose.yml      network                 tests                   README.md               core                    main.py                 
+```
+
 ## Additional Resources
 ### `charm` resources
 - How to use charm  https://jhuisi.github.io/charm/cryptographers.html
